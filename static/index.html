@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Library</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <main>
+        <h1>Library</h1>
+
+        <!-- Messages: hidden while empty (see .message:empty in style.css) -->
+        <div id="error" class="message error" role="alert"></div>
+        <div id="notice" class="message notice" role="status"></div>
+
+        <!-- Add / Edit form -->
+        <section class="panel">
+            <h2 id="form-title">Add item</h2>
+            <!-- novalidate: the browser must not check inputs; the API validates -->
+            <form id="item-form" novalidate>
+                <label>
+                    Title
+                    <input type="text" id="title">
+                </label>
+                <label>
+                    Author
+                    <input type="text" id="author">
+                </label>
+                <label>
+                    Type
+                    <select id="type">
+                        <option value="book">Book</option>
+                        <option value="dvd">DVD</option>
+                    </select>
+                </label>
+                <label>
+                    <span id="extra-label">Page count</span>
+                    <input type="number" id="extra">
+                </label>
+                <div class="form-buttons">
+                    <button type="submit" id="save-button">Add</button>
+                    <button type="button" id="cancel-button" class="secondary" hidden>Cancel</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Filters: sent to the API as ?available= and ?type= -->
+        <section class="filters">
+            <label class="toggle">
+                <input type="checkbox" id="filter-available">
+                Available only
+            </label>
+            <label>
+                Type
+                <select id="filter-type">
+                    <option value="">All</option>
+                    <option value="book">Book</option>
+                    <option value="dvd">DVD</option>
+                </select>
+            </label>
+        </section>
+
+        <!-- Item list -->
+        <ul id="item-list" class="item-list"></ul>
+        <p id="empty-state" class="empty" hidden>No items to show.</p>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
