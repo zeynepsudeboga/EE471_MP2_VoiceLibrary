@@ -14,6 +14,25 @@
         <div id="error" class="message error" role="alert"></div>
         <div id="notice" class="message notice" role="status"></div>
 
+        <!-- Voice: one spoken (or typed) sentence becomes one API request -->
+        <section class="panel">
+            <h2>Ask the librarian</h2>
+            <div class="voice-controls">
+                <button type="button" id="mic" class="mic" aria-label="Start recording">🎤</button>
+                <p id="voice-status" class="voice-status">Click the microphone, speak, then click again.</p>
+            </div>
+            <!-- Backup for testing: typed text goes through the same parser -->
+            <form id="text-command-form" class="text-command">
+                <input type="text" id="text-command" placeholder="…or type a command, e.g. check out item 3">
+                <button type="submit">Send</button>
+            </form>
+            <div class="log-header">
+                <h3 class="log-title">Voice log</h3>
+                <button type="button" id="clear-log" class="secondary small">Clear</button>
+            </div>
+            <ol id="voice-log" class="voice-log"></ol>
+        </section>
+
         <!-- Add / Edit form -->
         <section class="panel">
             <h2 id="form-title">Add item</h2>
@@ -67,5 +86,6 @@
     </main>
 
     <script src="/static/script.js"></script>
+    <script src="/static/voice.js"></script>
 </body>
 </html>

@@ -207,3 +207,102 @@ button.secondary:hover {
         align-items: flex-start;
     }
 }
+
+/* --- Voice panel --- */
+
+.voice-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.mic {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.mic.recording {
+    background: #c62828;
+    animation: pulse 1s infinite;
+}
+
+.mic:disabled {
+    background: #999;
+    cursor: wait;
+}
+
+@keyframes pulse {
+    50% { box-shadow: 0 0 0 8px rgba(198, 40, 40, 0.25); }
+}
+
+.voice-status {
+    margin: 0;
+    color: #555;
+}
+
+.text-command {
+    display: flex;
+    gap: 8px;
+}
+
+.text-command input {
+    flex: 1;
+}
+
+.log-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 0 8px;
+}
+
+.log-title {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+button.small {
+    padding: 3px 10px;
+    font-size: 0.8rem;
+}
+
+.voice-log {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 8px;
+    max-height: 320px;
+    overflow-y: auto;
+}
+
+.voice-log li {
+    background: #f7f7fa;
+    border-left: 4px solid #2f5bd3;
+    border-radius: 4px;
+    padding: 8px 10px;
+    font-size: 0.85rem;
+}
+
+.voice-log li.failed {
+    border-left-color: #c62828;
+}
+
+.voice-log p {
+    margin: 2px 0;
+}
+
+.voice-log .label {
+    display: inline-block;
+    width: 80px;
+    color: #777;
+}
+
+.voice-log code {
+    word-break: break-all;
+}
