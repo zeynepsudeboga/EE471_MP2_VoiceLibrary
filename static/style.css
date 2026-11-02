@@ -151,6 +151,18 @@ button.secondary:hover {
     font-size: 1rem;
 }
 
+/* "#3" before the title: the number to use in voice commands */
+.item-id {
+    display: inline-block;
+    margin-right: 8px;
+    padding: 1px 7px;
+    border-radius: 4px;
+    background: #2f5bd3;
+    color: #fff;
+    font-size: 0.85rem;
+    font-variant-numeric: tabular-nums;
+}
+
 .card .meta {
     margin: 0;
     color: #666;

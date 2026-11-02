@@ -111,7 +111,11 @@ function createCard(item) {
 
     const info = document.createElement("div");
     const heading = document.createElement("h3");
-    heading.textContent = item.title;
+    // The id comes from the API, so it still matches "item 3" after other items are deleted.
+    const idBadge = document.createElement("span");
+    idBadge.className = "item-id";
+    idBadge.textContent = `#${item.id}`;
+    heading.append(idBadge, item.title);
     const meta = document.createElement("p");
     meta.className = "meta";
     meta.textContent = `${item.author} · ${typeName} · ${extra}`;
